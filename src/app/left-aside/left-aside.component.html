@@ -1,3 +1,20 @@
-<p>
-  left-aside works!
-</p>
+<aside id="sideBar" class="leftSide">
+  <a class="leftSide_toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+  <div class="leftSide_top">
+    <p>follow:</p>
+    <ul class="leftSide_top_links">
+      <li><a class="leftSide_top_tooltip" title="twitter" href="https://twitter.com/mithunpattankar" target="_blank" rel="noopener"><i
+            class="icon fa fa-twitter"></i></a></li>
+      <li><a class="leftSide_top_tooltip" title="facebook" href="https://www.facebook.com/mithunvpcom" target="_blank" rel="noopener"><i
+            class="icon fa fa-facebook"></i></a></li>
+      <li><a class="leftSide_top_tooltip" title="google-plus" href="https://plus.google.com/+MithunPattankaR" target="_blank"
+          rel="noopener"><i class="icon fa fa-google-plus"></i></a></li>
+      <li><a class="leftSide_top_tooltip" title="github" href="https://github.com/mithunvp" target="_blank" rel="noopener"><i
+            class="icon fa fa-github"></i></a></li>
+    </ul>
+  </div>
+  <div class="leftSide_content"></div>
+  <div class="leftSide_selectionMenu">
+    <div *ngFor="let user of users" routerLink="/posts/{{user.id}}"  >   {{user.id}} - {{user.username}}  </div>
+  </div>
+</aside>

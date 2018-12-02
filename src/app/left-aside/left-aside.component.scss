@@ -1,0 +1,125 @@
+.leftSide {
+  float: left;
+  margin-left: -340px;
+  width: 340px;
+
+  &_toggle {
+    display: none;
+  }
+
+  &_top {
+    background: #d35;
+    padding: 15px 30px;
+
+    &:after,
+    &:before {
+      content: "";
+      display: table;
+    }
+
+    &:after {
+      clear: both;
+    }
+
+    &:after,
+    &:before {
+      content: "";
+      display: table;
+    }
+
+    i {
+      color: rgba(255, 255, 255, .7);
+      font-size: 24px;
+      width: 24px;
+    }
+
+    p {
+      float: left;
+      color: rgba(255, 255, 255, .8);
+      font-size: 16px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 24px;
+      padding: 3px 0;
+    }
+
+    &_links {
+      float: right;
+      position: relative;
+      padding-top: 2px;
+
+      li {
+        float: left;
+        margin-left: 8px;
+      }
+
+    }
+
+    i.icon {
+      display: inline-block;
+      font-style: normal;
+      text-align: center;
+    }
+  }
+
+  &_selectionMenu {
+    div {
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 1.5em;
+      padding-left: 10px;
+      color: #d35;
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      background-color: transparent;
+
+      &:first-child {
+        margin-top: 20px;
+      }
+
+      &:hover {
+        color: white;
+
+      }
+
+      &::after {
+        content: "";
+
+        position: absolute;
+        height: 100%;
+        width: 10px;
+        background-color: blue;
+        left: 0;
+        top: 0;
+      }
+
+      &:hover::after {
+        content: "";
+        padding-top: -10px;
+        position: absolute;
+        height: 100%;
+        background-color: blue;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        -webkit-animation-name: example;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        animation-name: example;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
+    }
+  }
+}
+
+@keyframes example {
+  0% {
+    width: 0%;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
