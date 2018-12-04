@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { GetDeneme } from '../entities/getdeneme';
 import { Pager } from '../entities/app-pager';
 import { GetdataService } from '../services/getdata.service';
-import { take } from 'rxjs/operators';
-import { map } from 'rxjs/operators';
+import { take , map} from 'rxjs/operators';
 
 @Component({
   selector: 'app-content',
