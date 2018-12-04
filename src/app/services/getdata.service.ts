@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { GetDeneme } from '../entities/getdeneme';
 import { PathsService } from './paths.service';
 import { Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -36,5 +37,15 @@ export class GetdataService {
   }
   getContents(): Observable<GetDeneme[]> {
     return this.http.get<GetDeneme[]>(this.constsPath.pathContent);
+  }
+
+  getProducts(seoUrl: string): Observable<GetDeneme[]> {
+
+    if (seoUrl) {
+      return this.http.get<GetDeneme[]>(this.constsPath.path + '/photos/' + seoUrl);
+    } else {
+      return this.http.get<GetDeneme[]>(this.constsPath.path + '/photos');
+    }
+
   }
 }

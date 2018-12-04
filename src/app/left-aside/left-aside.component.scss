@@ -79,7 +79,6 @@
       }
 
       &:hover {
-        color: white;
 
       }
 
@@ -88,17 +87,32 @@
 
         position: absolute;
         height: 100%;
-        width: 10px;
+        width: 2px;
         background-color: blue;
         left: 0;
         top: 0;
       }
-
+      &:hover::before {
+        content: "";
+        padding-top: -10px;
+        position: absolute;
+        height: 2px;
+        background-color: blue;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        -webkit-animation-name: example;
+        -webkit-animation-duration: 1s;
+        -webkit-animation-fill-mode: forwards;
+        animation-name: example;
+        animation-duration: 1s;
+        animation-fill-mode: forwards;
+      }
       &:hover::after {
         content: "";
         padding-top: -10px;
         position: absolute;
-        height: 100%;
+        height: 2px;
         background-color: blue;
         left: 0;
         top: 0;

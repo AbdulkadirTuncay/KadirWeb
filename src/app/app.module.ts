@@ -14,14 +14,17 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { ContentComponent } from './content/content.component';
 import { PostsComponent } from './posts/posts.component';
 
+import { AccountService } from './services/account.service';
 import { AlertifyService } from './services/alertify.service';
 import { PathsService } from './services/paths.service';
-import { AccountService } from './services/account.service';
+
 
 import { PostFilterPipe } from './pipes/post-filter.pipe';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 
+
+import {LoginGuard} from './login/login.guard';
 
 const routes: Routes = [
 {path: 'posts' , component: PostsComponent},
@@ -31,7 +34,6 @@ const routes: Routes = [
 {path: 'content/:userid' , component: ContentComponent},
 {path: 'posts/:userid' , component: PostsComponent},
 {path: 'login' , component: LoginComponent},
-
 ];
 
 
@@ -59,7 +61,10 @@ const routes: Routes = [
   ],
   providers: [AlertifyService,
     PathsService,
-    AccountService],
+    AccountService,
+    LoginGuard ,
+    { provide: 'apiUrl', useValue: 'https://jsonplaceholder.typicode.com/' },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
