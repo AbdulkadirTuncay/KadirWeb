@@ -1,7 +1,8 @@
 .content-item {
   display: inline-block;
   position: relative;
-width: 100%;
+  width: 100%;
+
   &_photo {
     float: left;
   }
@@ -9,12 +10,42 @@ width: 100%;
   &_content {
     float: left;
   }
-}
-.icon {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    stroke-width: 0;
-    stroke: currentColor;
-    fill: currentColor;
+
+  &_info {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    transition: all 1s ease;
+    opacity: 0;
+    &:hover {
+      opacity: 0.7;
+    }
+    .icon {
+      display: inline-block;
+      width: 2em;
+      height: 2em;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: green;
+    }
+
+    .icon.active {
+      fill: red;
+    }
+
+    .span_favorite {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      ;
+    }
+
+    .span_more {
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+    }
   }
+
+}
